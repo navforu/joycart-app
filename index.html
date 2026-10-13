@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JoyCart — pretend shopping for Android</title>
+    <meta
+      name="description"
+      content="JoyCart is a pretend Android shop. Share an Amazon or Flipkart product link, tap Buy Now, and enjoy a fake checkout. Source stays private; CI publishes APKs here."
+    />
+    <link rel="canonical" href="https://navforu.github.io/joycart-app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="JoyCart — pretend shopping for Android" />
+    <meta
+      property="og:description"
+      content="Share a product link, fake-buy it, and keep the joy. Private source, public APK releases."
+    />
+    <meta property="og:url" content="https://navforu.github.io/joycart-app/" />
+    <meta property="og:image" content="https://navforu.github.io/joycart-app/screenshots/01-home.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Manrope:wght@450;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <a class="brand" href="./">JoyCart</a>
+        <nav class="nav" aria-label="Page">
+          <a href="#screens">Screens</a>
+          <a href="#use-cases">Use cases</a>
+          <a href="#how-its-built">How it’s built</a>
+          <a href="https://github.com/navforu/joycart-app/releases/latest">Releases</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-copy">
+          <h1>JoyCart</h1>
+          <p class="lede">
+            A pretend Android shop. Share an Amazon or Flipkart link, tap Buy Now, and enjoy the order — nothing is charged or shipped.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/navforu/joycart-app/releases/latest"
+              >Download latest APK</a
+            >
+            <a class="btn btn-ghost" href="https://github.com/navforu/joycart-app">GitHub repo</a>
+          </div>
+          <p class="fine-print">
+            Android 8.0+. Educational / individual use only. Checkout is fake —
+            <a href="DISCLAIMER.md">disclaimer</a>.
+          </p>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="screenshots/01-home.png"
+            width="320"
+            height="569"
+            alt="JoyCart home with a paste-link field and pretend product deals"
+          />
+        </div>
+      </section>
+
+      <aside class="notice" role="note">
+        This is a simulation. Nothing is purchased, charged, or shipped. Read the
+        <a href="DISCLAIMER.md">disclaimer</a> before installing.
+      </aside>
+
+      <section id="screens">
+        <p class="section-kicker">Product</p>
+        <h2>Screens</h2>
+        <p class="section-lede">
+          Paste or share a product, fake-buy it, pick a pretend card, and watch the order land — all on the phone.
+        </p>
+        <div class="shot-grid">
+          <figure class="shot">
+            <button type="button" aria-label="View Home screenshot">
+              <img src="screenshots/01-home.png" width="220" height="391" alt="Home: paste a product link and browse deals" />
+            </button>
+            <figcaption>Home</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" aria-label="View Product screenshot">
+              <img src="screenshots/02-product.png" width="220" height="391" alt="Demo product with Add to Cart and Buy Now" />
+            </button>
+            <figcaption>Product</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" aria-label="View Checkout screenshot">
+              <img src="screenshots/03-checkout.png" width="220" height="391" alt="Order summary with pretend address and card" />
+            </button>
+            <figcaption>Checkout</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" aria-label="View Order screenshot">
+              <img src="screenshots/04-order.png" width="220" height="391" alt="Order placed confirmation" />
+            </button>
+            <figcaption>Order placed</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" aria-label="View Cart screenshot">
+              <img src="screenshots/05-cart.png" width="220" height="391" alt="Cart with pretend line items" />
+            </button>
+            <figcaption>Cart</figcaption>
+          </figure>
+        </div>
+        <dialog class="shot-viewer" id="shot-viewer" aria-label="Screenshot">
+          <button type="button" class="shot-close" aria-label="Close">Close</button>
+          <img alt="" />
+          <p></p>
+        </dialog>
+      </section>
+
+      <section id="use-cases">
+        <p class="section-kicker">Everyday use</p>
+        <h2>Use cases</h2>
+        <p class="section-lede">Built for the feeling of buying from a shared link — not for real checkout.</p>
+        <ul class="use-list">
+          <li>
+            <strong>Share a product into the app</strong>
+            <p>In Amazon, Flipkart, or the browser, tap Share on a product and pick JoyCart. The page opens in-app.</p>
+          </li>
+          <li>
+            <strong>Paste a link on Home</strong>
+            <p>Drop an https URL into the field and Open. JoyCart scrapes the title, image, and price when it can.</p>
+          </li>
+          <li>
+            <strong>Fake Buy Now / Add to Cart</strong>
+            <p>Both storefront buttons and JoyCart’s own bar go to a pretend cart or checkout. No merchant is contacted.</p>
+          </li>
+          <li>
+            <strong>Edit price and currency</strong>
+            <p>If the scrape is wrong, tap the bottom bar and set the amount and currency yourself (₹, $, £, and more).</p>
+          </li>
+          <li>
+            <strong>Pretend cards stay on the device</strong>
+            <p>Saved cards and the delivery address persist locally. Orders and the cart vanish when the app closes.</p>
+          </li>
+          <li>
+            <strong>Amazon-ish or Flipkart-ish chrome</strong>
+            <p>Switch the store look on Home so the pretend shop matches the link you shared.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="how-its-built">
+        <p class="section-kicker">Engineering</p>
+        <h2>How it’s built</h2>
+        <p class="section-lede">
+          The Android source stays private. This public repo only holds the showcase, license,
+          disclaimer, and APK releases.
+        </p>
+
+        <div class="repo-pair">
+          <article class="repo private">
+            <span class="label">Private</span>
+            <h3>navforu/fake-ecomm-droid</h3>
+            <p>
+              Kotlin / Jetpack Compose app, unit tests,
+              <code>version.properties</code>, and the
+              <code>release.yml</code> workflow that publishes here.
+            </p>
+          </article>
+          <article class="repo public">
+            <span class="label">Public</span>
+            <h3>navforu/joycart-app</h3>
+            <p>
+              This site (GitHub Pages), screenshots, MIT license, disclaimer, and every
+              <code>JoyCart-x.y.z.n.apk</code> on Releases — overwritten from
+              <code>public/</code> on each successful publish.
+            </p>
+          </article>
+        </div>
+
+        <ol class="flow">
+          <li>
+            <strong>Push to private <code>main</code></strong>
+            <p>
+              CI bumps the version, runs JVM unit tests, and builds a release APK.
+            </p>
+          </li>
+          <li>
+            <strong>Publish only if tests and build succeed</strong>
+            <p>
+              Pull requests stop after test/build. On <code>main</code>, a
+              <code>PUBLIC_REPO_TOKEN</code> checks out
+              <code>joycart-app</code>, syncs the private repo’s <code>public/</code> folder with
+              <code>rsync</code>, and pushes.
+            </p>
+          </li>
+          <li>
+            <strong>GitHub Release + APK</strong>
+            <p>
+              CI creates tag <code>vMAJOR.MINOR.PATCH.BUILD</code> on the public repo, attaches
+              <code>JoyCart-….apk</code> and a <code>.sha256</code> checksum, then commits the new
+              <code>version.properties</code> back to the private repo.
+            </p>
+          </li>
+        </ol>
+
+        <h2 id="versions">Versions handle themselves</h2>
+        <p class="section-lede">
+          Releases use <code>MAJOR.MINOR.PATCH.BUILD</code>. Every publish increments the last
+          digit unless you flip a bump flag before pushing.
+        </p>
+        <div class="version-box" aria-label="Version bump rules">
+          <div><span class="dim"># version.properties in the private repo</span></div>
+          <div>VERSION=0.0.0.4</div>
+          <div>BUMP_MAJOR=false &nbsp;<span class="dim">→ 1.0.0.0</span></div>
+          <div>BUMP_MINOR=false &nbsp;<span class="dim">→ 0.1.0.0</span></div>
+          <div>BUMP_PATCH=false &nbsp;<span class="dim">→ 0.0.1.0</span></div>
+          <div><span class="dim"># all false → regular build: 0.0.0.4 → 0.0.0.5</span></div>
+          <div><span class="dim"># past .99 carries left: 0.0.0.99 → 0.0.1.0</span></div>
+          <div><span class="dim"># versionCode = M·1e6 + N·1e4 + P·100 + B (always increases)</span></div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <nav aria-label="Footer">
+          <a href="https://github.com/navforu/joycart-app/releases/latest">Latest release</a>
+          <a href="README.md">README</a>
+          <a href="DISCLAIMER.md">Disclaimer</a>
+          <a href="LICENSE">MIT License</a>
+          <a href="https://naveenk.dev/projects/">On naveenk.dev</a>
+        </nav>
+        <p>© Naveen Kandakumar · Educational project · Nothing is really bought</p>
+      </footer>
+    </div>
+    <script>
+      (function () {
+        var dialog = document.getElementById("shot-viewer");
+        var view = dialog.querySelector("img");
+        var caption = dialog.querySelector("p");
+        document.querySelectorAll(".shot button[aria-label^='View ']").forEach(function (button) {
+          button.addEventListener("click", function () {
+            var image = button.querySelector("img");
+            view.src = image.currentSrc || image.src;
+            view.alt = image.alt;
+            caption.textContent = button.parentElement.querySelector("figcaption").textContent;
+            dialog.showModal();
+          });
+        });
+        dialog.querySelector(".shot-close").addEventListener("click", function () {
+          dialog.close();
+        });
+        dialog.addEventListener("click", function (event) {
+          if (event.target === dialog) dialog.close();
+        });
+        dialog.addEventListener("close", function () {
+          view.removeAttribute("src");
+        });
+      })();
+    </script>
+  </body>
+</html>
